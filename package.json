@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/VPalacioSerna/examenJavaScript#readme",
   "dependencies": {
-    "json-server": "^1.0.0-beta.5"
+    "json": "^11.0.0",
+    "json-server": "^1.0.0-beta.5",
+    "server": "^1.0.42"
   }
 }
