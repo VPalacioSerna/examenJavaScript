@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "admin",
+      "email": "admin@gmail.com",
+      "password": "123",
+      "rol": "admin"
+    },
+    {
+      "id": "2",
+      "name": "user",
+      "email": "user@gmail.com",
+      "password": "123",
+      "rol": "user"
+    },
+    {
+      "id": "fb5a",
+      "name": "valentina",
+      "email": "vale@gmail.com",
+      "password": "123",
+      "rol": "user"
+    },
+    {
+      "id": "ebca",
+      "name": "tatiana",
+      "email": "tata@gmial.com",
+      "password": "123",
+      "rol": "user"
+    }
+  ]
+}
