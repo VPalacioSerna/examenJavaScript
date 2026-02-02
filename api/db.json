@@ -15,18 +15,29 @@
       "rol": "user"
     },
     {
-      "id": "fb5a",
-      "name": "valentina",
-      "email": "vale@gmail.com",
+      "id": "4fbb",
+      "name": "milo",
+      "email": "milo@gmail.com",
       "password": "123",
       "rol": "user"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "1",
+      "title": "tarea mate",
+      "category": "mathematics",
+      "priority": "hard",
+      "status": "progress",
+      "description": "detailssssssssssssssssssss"
     },
     {
-      "id": "ebca",
-      "name": "tatiana",
-      "email": "tata@gmial.com",
-      "password": "123",
-      "rol": "user"
+      "id": "de26",
+      "title": "nueva tarea",
+      "category": "Computer Science",
+      "priority": "Easy",
+      "status": "In progress",
+      "description": "tareita"
     }
   ]
 }

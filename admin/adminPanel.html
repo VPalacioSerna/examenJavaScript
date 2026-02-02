@@ -8,7 +8,7 @@
     <!--Link para guardian de login-->
     <script src="../JS/guard.js"></script>
     <script>
-        verifyAccess('user');
+        verifyAccess('admin');
     </script>
 
     <!--Link para bootstrap html-->
@@ -20,5 +20,135 @@
 </head>
 <body class="d-flex flex-column min-vh-100 bg-light">
     
+    <header>
+        <!--Inicio de la barra de navegacion-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom py-3">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center text-dark" href="./indexAdmin.html">
+                    CRUDZASO
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-secondary px-3" aria-current="page" href="./taskManager.html">CRUD Tasks</a>
+                        </li>
+                    </ul>
+                    <button class="btn btn-sm bg-success bg-opacity-50 fw-medium d-flex align-items-center gap-2">
+                        <a href="../login/login.html" class="text-black text-decoration-none" onclick="btnLogOut()"><i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        Log Out</a>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <!--Fin de la barra de navegacion-->
+    </header> 
+
+    <main class="container py-4">
+        <div class="row g-3 mb-4 text-center">
+            <div class="col-md-4">
+                <div class="card shadow-sm p-3">
+                    <small class="text-muted fw-bold">TOTAL ORDERS</small>
+                    <h3 id="total-orders-count" class="mb-0">0</h3>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm p-3 border-warning">
+                    <small class="text-muted fw-bold">PENDING</small>
+                    <h3 id="pending-orders-count" class="mb-0">0</h3>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm p-3 text-success border-success">
+                    <small class="fw-bold">REVENUE</small>
+                    <h3 id="total-revenue" class="mb-0">$0</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-8">
+                <div class="d-flex justify-content-between mb-3">
+                    <h4 class="mb-0">Recent Orders</h4>
+                    <button class="btn btn-sm btn-outline-secondary">Export</button>
+                </div>
+                <div class="table-responsive card shadow-sm">
+                    <table class="table table-hover mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th>ID</th>
+                                <th>User</th>
+                                <th>Status</th>
+                                <th class="text-end">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orders-tbody" class="text-black">
+                            <!-- <tr>
+                                <td>#1024</td>
+                                <td class="fw-bold">Alice Smith</td>
+                                <td><span class="badge text-dark border-warning border border-3">Preparing</span></td>
+                                <td class="text-end fw-bold">$45.00</td>
+                            </tr>
+                            <tr>
+                                <td>#1023</td>
+                                <td class="fw-bold">Bob Jones</td>
+                                <td><span class="badge text-dark border-danger border border-3">Pending</span></td>
+                                <td class="text-end fw-bold">$12.50</td>
+                            </tr>
+                            <tr>
+                                <td>#1023</td>
+                                <td class="fw-bold">Bob Jones</td>
+                                <td><span class="badge text-dark border border-success border-3">Delivered</span></td>
+                                <td class="text-end fw-bold">$12.50</td>
+                            </tr>
+                            <tr>
+                                <td>#1023</td>
+                                <td class="fw-bold">Bob Jones</td>
+                                <td><span class="badge text-dark border-secondary border border-3">Canceled</span></td>
+                                <td class="text-end fw-bold">$12.50</td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div id="order-details-card" class="card shadow-sm p-4">
+                    <!-- <div class="d-flex justify-content-between mb-3">
+                        <h5 class="mb-0">Order #1024</h5>
+                        <span class="badge bg-primary">Active</span>
+                    </div>
+                    
+                    <p class="mb-1 fw-bold">Alice Smith</p>
+                    <p class="small text-muted mb-4">alice@example.com</p>
+
+                    <div class="border-top pt-3">
+                        <div class="d-flex justify-content-between small mb-2">
+                            <span>2x Burger Classico</span>
+                            <span>$24.00</span>
+                        </div>
+                        <div class="d-flex justify-content-between fw-bold fs-5 mt-3">
+                            <span>Total</span>
+                            <span>$48.60</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 d-grid gap-2">
+                        <select class="form-select">
+                            <option>Preparing</option>
+                            <option>Ready</option>
+                            <option>Delivered</option>
+                        </select>
+                        <button class="btn btn-success">Update Status</button>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </main>
+
 </body>
 </html>
