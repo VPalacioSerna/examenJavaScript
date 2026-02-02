@@ -26,7 +26,7 @@ Pasos para configurar el entorno localmente:
 
 ### 1. Clonar el repositorio
 ```bash
-git clone [https://github.com/VPalacioSerna/examenJavaScript.git](https://github.com/VPalacioSerna/examenJavaScript.git)
+git clone (https://github.com/VPalacioSerna/examenJavaScript.git)
 ```
 
 ### 2. Instalar las dependencias
@@ -37,7 +37,7 @@ npx json-server db.json
 
 ## Datos del coder
 
-**Nombre** | Tu Nombre Completo |
+**Nombre** | Valentina Palacio Serna|
 **GitHub** | [@VPalacioSerna](https://github.com/VPalacioSerna) |
 
 
