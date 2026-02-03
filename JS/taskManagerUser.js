@@ -3,6 +3,8 @@
 //3. Funciones renderizar
 //4. Funciones logica
 
+//Fecha actual
+let currentDate = new Date().toLocaleString()
 
 const inputTitle = document.getElementById('input-title');
 const inputCategory = document.getElementById('input-category');
@@ -30,10 +32,13 @@ let taskInEdition = null;
 
 //Traer tareas (llamar a get para renderizar)
 async function getTasks() {
+    // Uusuario que se guarda en el local storage gracias a la entrada
+    const sessionData = JSON.parse(localStorage.getItem('sessionUser'));
+
     try {
-        const res = await fetch(`${URL_API_TASKS}`);
+        const res = await fetch(`${URL_API_TASKS}?idUser=${sessionData.id}`);
         listTasks = await res.json();
-        //muestra
+
         renderTasks(listTasks);
     } catch (error) {
         console.log('Error retrieving tasks in admin:', error);        
@@ -42,6 +47,7 @@ async function getTasks() {
 
 //Crear tarea
 async function createTask(data) {
+    
     try {
         const res = await fetch(`${URL_API_TASKS}`, {
             method: 'POST', 
@@ -105,7 +111,6 @@ function renderTasks(listTasks) {
         return `
             <tr>
                 <td>${t.id}</td>
-                <td>user</td>
                 <td class="fw-bold">${t.title}</td>
                 <td >${t.category}</td>
                 <td >${t.priority}</td>
@@ -139,7 +144,7 @@ function fillForm(t) {
     inputCategory.value = t.category;
     inputPriority.value = t.priority;
     inputStatus.value = t.status;
-    inputDescription.value = t.description;
+    inputDescription.value = t.description;    
 }
 
 //limpia los datos del formulario
@@ -152,7 +157,7 @@ function cleanForm() {
 }
 
 function btnLogOut(){
-    const session = localStorage.removeItem('sessionUser');    
+    localStorage.removeItem('sessionUser');    
 }
 
 
@@ -202,12 +207,17 @@ btnSaveTask.addEventListener('click', async ()=> {
         return;
     }
 
+    //Traer el usuario logueado de la local
+    const sessionData = JSON.parse(localStorage.getItem('sessionUser'));
+
     const taskData = {
+        idUser: sessionData.id,
         title: inputTitle.value,
         category: inputCategory.value,
         priority: inputPriority.value,
         status: inputStatus.value,
-        description: inputDescription.value
+        description: inputDescription.value,
+        date: currentDate
     };
 
     try {
@@ -234,7 +244,4 @@ btnSaveTask.addEventListener('click', async ()=> {
 
 //---------------------Inicializacion
 document.addEventListener('DOMContentLoaded', getTasks);
-
-
-
 

@@ -24,20 +24,44 @@
   ],
   "tasks": [
     {
-      "id": "1",
+      "id": "9103",
+      "idUser": "4fbb",
       "title": "tarea mate",
-      "category": "mathematics",
-      "priority": "hard",
-      "status": "progress",
-      "description": "detailssssssssssssssssssss"
+      "category": "Mathematics",
+      "priority": "Hard",
+      "status": "Completed",
+      "description": "cscsa",
+      "date": "2/2/2026, 7:08:29 PM"
     },
     {
-      "id": "de26",
-      "title": "nueva tarea",
-      "category": "Computer Science",
+      "id": "9103",
+      "idUser": "2",
+      "title": "tarea mate",
+      "category": "Mathematics",
+      "priority": "Hard",
+      "status": "Pending",
+      "description": "cscsa",
+      "date": "2/2/2026, 7:08:29 PM"
+    },
+    {
+      "id": "bc31",
+      "idUser": "4fbb",
+      "title": "tareita",
+      "category": "Literature",
       "priority": "Easy",
       "status": "In progress",
-      "description": "tareita"
+      "description": "tareita",
+      "date": "2/2/2026, 7:31:02 PM"
+    },
+    {
+      "id": "b5cf",
+      "idUser": "2",
+      "title": "nueva tarea",
+      "category": "History",
+      "priority": "Medium",
+      "status": "In progress",
+      "description": "sdcaaaaaawqd",
+      "date": "2/2/2026, 7:52:19 PM"
     }
   ]
 }

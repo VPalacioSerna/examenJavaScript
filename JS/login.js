@@ -59,9 +59,9 @@ async function btnLogin(){
   });
 
   if (users[0].rol === 'admin') {
-      window.location.href = '../admin/indexAdmin.html';
+      window.location.href = '../admin/adminPanel.html';
   } else {
-      window.location.href = '../user/indexUser.html';
+      window.location.href = '../user/userPanel.html';
   }
 }
 

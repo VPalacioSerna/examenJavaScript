@@ -7,16 +7,18 @@ let allTasks = [];
 //--------Manejo de tareas
 
 // Cargar todas las tareas y estadísticas
-async function getAllTasks() {
+async function getUserTasks() {
+    // Uusuario que se guarda en el local storage gracias a la entrada
+    const sessionData = JSON.parse(localStorage.getItem('sessionUser'));
+
     try {
-        const res = await fetch(URL_API_TASKS);
-        allTasks = await res.json(); //Trae las tareas y las alamacena en la lista
-        
+        const res = await fetch(`${URL_API_TASKS}?idUser=${sessionData.id}`);
+        allTasks = await res.json();
+
         updateDashboardStats(allTasks); //actualiza los estados
         renderTasksTable(allTasks); //actualiza la tabla de tareas
-
     } catch (error) {
-        console.error("Error loading tasks on the administrator page: ", error);
+        console.log('Error retrieving tasks in admin:', error);        
     }
 }
 
@@ -32,7 +34,7 @@ async function updateTaskStatus(id) {
 
         if (res.ok) {
             alert("Status updated!");
-            getAllTasks(); // Recargar tabla 
+            getUserTasks(); // Recargar tabla 
         }
     } catch (error) {
         console.error("Update error:", error);
@@ -57,13 +59,11 @@ function updateDashboardStats(tasks) {
 
 //Renderiza la tabla de TASKS en dash
 function renderTasksTable(tasks) {
-
     const tbody = document.getElementById('tasks-tbody');
 
     tbody.innerHTML = tasks.reverse().map(task => `        
         <tr onclick="viewTaskDetails('${task.id}')" style="cursor:pointer">  
-            <td class="fw-bold">${task.title}</td>          
-            <td >User ID: ${task.idUser}</td> 
+            <td class="fw-bold">${task.title}</td>  
             <td>${getStatusBadge(task.status)}</td> <!--Llama el estado y los colres de cada uno-->
             <td class="fw-bold">${task.priority}</td> 
             <td class="text-end ">$${task.date}</td>
@@ -117,4 +117,4 @@ function getStatusBadge(status) {
 
 
 // Inicializar
-document.addEventListener('DOMContentLoaded', getAllTasks);
+document.addEventListener('DOMContentLoaded', getUserTasks);

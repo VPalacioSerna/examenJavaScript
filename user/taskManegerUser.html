@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task Manager | CRUDZASO</title>
+    <title>User Panel | Riwi</title>
 
     <!--Link para guardian de login-->
     <script src="../JS/guard.js"></script>
     <script>
-        verifyAccess('admin');
+        verifyAccess('user');
     </script>
 
     <!--Link para bootstrap html-->
@@ -17,6 +17,7 @@
     <!--Link para los iconos de Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+ 
 </head>
 <body class="d-flex flex-column min-vh-100 bg-light">
     
@@ -35,7 +36,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link text-secondary px-3" aria-current="page" href="./adminPanel.html">Dashboard</a>
+                            <a class="nav-link text-secondary px-3" aria-current="page" href="./userPanel.html">User Panel</a>
                         </li>
                     </ul>
                     <button class="btn btn-sm bg-success bg-opacity-50 fw-medium d-flex align-items-center gap-2">
@@ -48,9 +49,10 @@
         <!--Fin de la barra de navegacion-->
     </header> 
 
+
     <main class="container-fluid py-4">
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h2 class="fw-bold m-0">Task Management Admin</h2>
+            <h2 class="fw-bold m-0">Task Management User</h2>
         </div>
 
         <div class="row g-4">
@@ -59,8 +61,7 @@
                     <table class="table table-hover mb-0">
                         <thead class="table-light">
                             <tr>       
-                                <th>Id</th>
-                                <th>Id User</th>                          
+                                <th>Id</th>                         
                                 <th>Task</th>
                                 <th>Category</th>
                                 <th>Priority</th>
@@ -69,11 +70,9 @@
                                 <th class="text-end">Acciones</th>
                             </tr>
                         </thead>
-                        <tbody id="tbody" class="">
-                            
+                        <tbody id="tbody" class="">                           
 
-                            <!-- Tabla renderizada en JS -->
-
+                            <!--LLenado de lista en JS-->
 
                         </tbody>
                     </table>
@@ -136,8 +135,7 @@
         </div>
     </main>
 
-    
-    <script src="../JS/taskManagerAdmin.js"></script>
 
+    <script src="../JS/taskManagerUser.js"></script>
 </body>
 </html>
