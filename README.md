@@ -39,5 +39,6 @@ The API is located at:
 **Nombre** | Valentina Palacio Serna|
 **Clan** | McCarthy |
 
-
+- Link repo
+- https://github.com/VPalacioSerna/examenJavaScript.git
 
