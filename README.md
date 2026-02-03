@@ -1,44 +1,43 @@
 # Sistema de Gestión de Eventos
 
-**EventMaster** es una aplicación web diseñada para centralizar la organización de eventos. Permite a los usuarios gestionar el ciclo de vida completo de un evento (Crear, Leer, Actualizar y Eliminar) mediante una interfaz intuitiva y una comunicación fluida con una API simulada.
+## CRUDZASO
+- This project fulfills the requirements outlined in the statement:
+- Registration, login, session (LocalStorage)
+- Roles (user / admin)
+- JSON Server as a mock API
+- CRUD operations for tasks
+- User only sees their own tasks
+- Admin sees all tasks and has access to metrics
+- Routes protected by role
 
----
+## 1) Requirements
+- Node.js must be installed (to use JSON Server)
 
-##  Descripción del Sistema
+## 2) Setting up the API (JSON Server)
+- In the project folder:
 
-Este sistema permite administrar una agenda de eventos de manera eficiente. El núcleo del proyecto es un **CRUD completo** conectado a un servidor de datos local, lo que garantiza que la información persista durante la sesión de desarrollo.
-
-### Características Principales:
-* **Gestión Integral:** Registro de nuevos eventos con nombre, fecha, ubicación y descripción.
-* **Visualización Dinámica:** Listado en tiempo real de los eventos programados.
-* **Edición Rápida:** Modificación de detalles de eventos existentes.
-* **Eliminación:** Limpieza de registros de eventos cancelados o pasados.
-* **Consumo de API:** Integración con `json-server` para simular un entorno de backend RESTful.
-
----
-
-##  Instrucciones para Ejecutar el Proyecto
-
-Pasos para configurar el entorno localmente:
-
-### Pre-requisitos
-* Tener instalado [Node.js](https://nodejs.org/).
-
-### 1. Clonar el repositorio
-```bash
-git clone (https://github.com/VPalacioSerna/examenJavaScript.git)
-```
-
-### 2. Instalar las dependencias
+### HOW TO DO IT
 ```bash
 npm i json-server
 npx json-server db.json
 ```
 
+If it asks you to install anything, accept.
+
+The API is located at:
+- http://localhost:3000/users
+- http://localhost:3000/tasks
+
+## 3) Test Users
+- Admin: admin / admin@gmail.com / 123
+- User: user / user@gmail.com / 123
+
+- You can also create your own profile or as many as you want, but these will log in as users.
+
 ## Datos del coder
 
 **Nombre** | Valentina Palacio Serna|
-**GitHub** | [@VPalacioSerna](https://github.com/VPalacioSerna) |
+**Clan** | McCarthy |
 
 
 

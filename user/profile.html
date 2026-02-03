@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | CRUDZASO</title>
+
+    <!--Link para guardian de login-->
+    <script src="../JS/guard.js"></script>
+    <script>
+        verifyAccess('user');
+    </script>
+
+    <!--Link para bootstrap html-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!--Link para los iconos de Bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+</head>
+<body class="d-flex flex-column min-vh-100 bg-light">
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <!-- SIDEBAR -->
+            <div class="col-2 min-vh-100 bg-white ">
+
+                <aside id="" class="border-0 p-3 bg-white">
+                    <div class="d-flex align-items-center justify-content-center justify-content-lg-start gap-2 mb-4">
+                        <h1 class="h5 fw-bold mb-0">CRUZASO</h1>
+                    </div>
+
+                    <nav class="nav nav-pills flex-column gap-2">
+                        <a class="nav-link text-dark" href="./userPanel.html">
+                            <i class="bi bi-speedometer2 me-2"></i> My Tasks
+                        </a>
+                        <a class="nav-link text-dark" href="./taskManegerUser.html">
+                            <i class="bi bi-list-check me-2"></i> CRUD Task
+                        </a>
+                        <a class="nav-link active" href="./profile.html">
+                            <i class="bi bi-person me-2"></i> Profile
+                        </a>
+                    </nav>
+                </aside>
+
+            </div>
+
+            <!-- HEADER - MAIN -->
+            <div class="col-10">
+
+                <main class="container-fluid py-4">
+
+                    <div class="row g-4 mt-5">
+
+                        <!--Card de profile-->
+                        <div class="col-lg-4">
+                            <div class="card shadow-sm p-3 sticky-top mb-5">
+
+                                <h4 class="fw-bold mb-4">My profile</h4>
+                                <div class="card-body text-center">
+                                    <div class="bg-light rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                                        <i class="bi bi-person"></i>
+                                    </div>
+
+                                    <h5 id="user-name" class="fw-bold mb-0">name</h5>
+                                    <p id="user-email" class="text-muted small">email</p>
+                                    <span id="user-rol" class="badge rounded-pill bg-success-subtle text-success border border-success-subtle px-3 py-2 mb-4">User</span>
+
+                                    <div class="row g-2 mb-4">
+                                        <div class="col-6">
+                                            <div class="bg-light p-2 rounded text-start">
+                                                <small class="text-uppercase text-muted fw-bold d-block">Tasks</small>
+                                                <span id="user-tasks-count" class="h4 fw-bold">0</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-8">
+                            <div class="d-flex justify-content-between mb-3 shadow-sm">
+                                <h4 class="mb-0">Personal Information</h4>
+                                <button class="btn btn-sm btn-outline-secondary p-2"><a class="text-decoration-none text-dark fw-bold" href="./taskManagerAdmin.html"><i class="bi bi-pencil-square me-2"></i>Edit profile</a></button>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+
+                </main>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../JS/login.js"></script>
+</body>
+</html>

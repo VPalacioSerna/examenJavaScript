@@ -25,16 +25,6 @@
   "tasks": [
     {
       "id": "9103",
-      "idUser": "4fbb",
-      "title": "tarea mate",
-      "category": "Mathematics",
-      "priority": "Hard",
-      "status": "Completed",
-      "description": "cscsa",
-      "date": "2/2/2026, 7:08:29 PM"
-    },
-    {
-      "id": "9103",
       "idUser": "2",
       "title": "tarea mate",
       "category": "Mathematics",
@@ -62,6 +52,16 @@
       "status": "In progress",
       "description": "sdcaaaaaawqd",
       "date": "2/2/2026, 7:52:19 PM"
+    },
+    {
+      "id": "bf27",
+      "idUser": "2",
+      "title": "tarea mate",
+      "category": "Physics",
+      "priority": "Medium",
+      "status": "In progress",
+      "description": "tareita",
+      "date": "2/2/2026, 9:37:33 PM"
     }
   ]
 }
