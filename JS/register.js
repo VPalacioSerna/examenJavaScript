@@ -16,7 +16,7 @@ const URL_API_USERS = 'http://localhost:3000/users';
 
 
 
-//Funcion para buscar si el email esta para no repetirlo
+//Function to check if the email address exists so as not to repeat it
 async function searchData(email) {
   try {  
     const res = await fetch(`${URL_API_USERS}?email=${email}`);
@@ -62,9 +62,9 @@ async function createUser(name, email, password) {
 
 
 
-// ---------------Funciones de control de estado
+// ---------------State control functions
 
-//Funcion para limpiar los campos de registrar
+//Function to clear the registration fields
 function cleanRegister() {
     nameText.value = '';
     emailText.value = '';

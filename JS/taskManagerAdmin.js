@@ -17,20 +17,20 @@ const inputDescription = document.getElementById('input-description');
 const URL_API_TASKS= 'http://localhost:3000/tasks';  
 
 
-//Lista de elementos
+//List of items
 const tbody = document.getElementById('tbody'); 
 let listTasks = [];
 
-//Control de botones
+//Button control
 const btnSaveTask = document.getElementById('btnSaveTask');
 let currentMode = 'CREATE'; // 'CREATE', 'EDIT', 'VIEW'
 let taskInEdition = null;
 
 
 
-//---------------------Funciones de API
+//---------------------API functions
 
-//Traer tareas (llamar a get para renderizar)
+//Bring tasks (call GET to render)
 async function getTasks() {
     try {
         const res = await fetch(`${URL_API_TASKS}`);
@@ -88,8 +88,7 @@ async function deleteTask(id) {
 
 
 
-//---------------------Funciones de Renderizar
-
+//---------------------Rendering Functions
 //Mostrar los tareas
 function renderTasks(listTasks) {
     tbody.innerHTML = '';
@@ -125,9 +124,9 @@ function renderTasks(listTasks) {
 }
 
 
-//---------------------Funciones de control de estado y formulario
+//---------------------Status and form control functions
 
-// Función para limpiar todo y volver al estado inicial
+// Function to clear everything and return to the initial state
 function resetForm() {
     cleanForm();
     currentMode = 'CREATE';
@@ -135,7 +134,7 @@ function resetForm() {
     btnSaveTask.innerText = "Save Task";
 }
 
-// Función para llenar los datos que se mandan a la api
+// Function to fill in the data sent to the API
 function fillForm(t) {
     inputTitle.value = t.title;
     inputCategory.value = t.category;
@@ -144,7 +143,7 @@ function fillForm(t) {
     inputDescription.value = t.description;    
 }
 
-//limpia los datos del formulario
+//clear the form data
 function cleanForm() {
     inputTitle.value = '';
     inputCategory.value = '';
@@ -158,10 +157,10 @@ function btnLogOut(){
 }
 
 
-//---------------------Funciones de interaccion (botones de la tabla)
-//Estas funciones llenan los datos en el formulario y manejan las variables de control
+//---------------------Interaction functions (table buttons)
+//These functions populate the form with data and manage control variables
 
-//Funcion para detalles
+//Function for details
 function infoTask(id) {
     const task = listTasks.find(p => String(p.id) === String(id));
     if (task) {
@@ -193,8 +192,8 @@ function editTask(id) {
     }
 }
 
-//---------------------Manejador principal (boton guardar)
-//Llama las funciones del CRUD para que hagan los cambios en la bd
+//---------------------Main handler (save button)
+//Calls the CRUD functions to make changes to the database
 
 //Manejo del guardado de datos
 btnSaveTask.addEventListener('click', async ()=> {
@@ -218,7 +217,7 @@ btnSaveTask.addEventListener('click', async ()=> {
 
     try {
         //si esta editando
-        if (currentMode === 'EDIT') { //taskInEdition tendria un id en este momento
+        if (currentMode === 'EDIT') { //taskInEdition would have an id at this time
             await updateTask(taskInEdition, taskData);
             getTasks();
             alert('Task updated!');

@@ -16,12 +16,12 @@ async function getTasks() {
 }
 
 function renderUserProfile(listTasks) {
-    // Obtenemos el usuario de la sesión
+    // We obtain the session user
     const sessionData = JSON.parse(localStorage.getItem('sessionUser'));
 
     if (!sessionData) return;
 
-    //Elementos de html de pagina de info (locales porque solo se necesitan aqui)
+    //HTML elements for the info page (local because they are only needed here)
     const nameUser = document.getElementById('user-name');
     const emailUser = document.getElementById('user-email');
     const rolUser = document.getElementById('user-rol');

@@ -9,7 +9,7 @@ const rolText = document.getElementById('rol-text');
 const URL_API_USERS = 'http://localhost:3000/users';
 
 
-//Traer usuarios registrados 
+//Bring in registered users
 async function getUser(URL) {
     try {
         const res = await fetch(URL);
@@ -20,9 +20,9 @@ async function getUser(URL) {
 }
 
 
-// Funciones de control de estado
+// State control functions
 
-//Funcion para limpiar los campos de login
+//Function to clear login fields
 function cleanLogin() {
   nameText.value = '';
   emailText.value = '';

@@ -1,19 +1,19 @@
 // URL APIs
 const URL_API_TASKS = 'http://localhost:3000/tasks';
 
-// Estado de las tareas
+// Task status
 let allTasks = [];
 
-//--------Manejo de tareas
+//--------Task management
 
-// Cargar todas las tareas y estadísticas
+// Load all tasks and statistics
 async function getAllTasks() {
     try {
         const res = await fetch(URL_API_TASKS);
-        allTasks = await res.json(); //Trae las tareas y las alamacena en la lista
+        allTasks = await res.json(); //Bring the tasks and store them in the list.
         
-        updateDashboardStats(allTasks); //actualiza los estados
-        renderTasksTable(allTasks); //actualiza la tabla de tareas
+        updateDashboardStats(allTasks); //updates the statuses
+        renderTasksTable(allTasks); //Update the task table
 
     } catch (error) {
         console.error("Error loading tasks on the administrator page: ", error);
@@ -32,7 +32,7 @@ async function updateTaskStatus(id) {
 
         if (res.ok) {
             alert("Status updated!");
-            getAllTasks(); // Recargar tabla 
+            getAllTasks(); // Reload table
         }
     } catch (error) {
         console.error("Update error:", error);
@@ -42,7 +42,7 @@ async function updateTaskStatus(id) {
 
 // -------------RENDER
 
-//se le envia la lista con todas las tareas
+//The list with all the tasks is sent to you.
 function updateDashboardStats(tasks) {
     const total = tasks.length;
 
@@ -55,7 +55,7 @@ function updateDashboardStats(tasks) {
     document.getElementById('total-tasks').innerText = complete;
 }
 
-//Renderiza la tabla de TASKS en dash
+//Render the TASKS table in Dash
 function renderTasksTable(tasks) {
 
     const tbody = document.getElementById('tasks-tbody');
@@ -72,7 +72,7 @@ function renderTasksTable(tasks) {
 }
 
 
-//Funcion para ver las tareas
+//Function to view tasks
 function viewTaskDetails(id) {
     const task = allTasks.find(t => String(t.id) === String(id));
     const container = document.getElementById('tasks-details-card');
@@ -98,14 +98,14 @@ function viewTaskDetails(id) {
 }
 
 
-// -----------LOGICA
+// -----------LOGIC
 
 function btnLogOut(){
     localStorage.removeItem('sessionUser');    
 }
 
 
-//Funcion para asignar colores de los badge
+//Function to assign badge colors
 function getStatusBadge(status) {
     const colors = {
         'Pending': 'border-danger text-danger',
@@ -116,5 +116,5 @@ function getStatusBadge(status) {
 }
 
 
-// Inicializar
+// Init
 document.addEventListener('DOMContentLoaded', getAllTasks);
